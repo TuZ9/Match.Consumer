@@ -1,13 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Amazon.SQS.Model;
+using Suitability.Consumer.Application.Interfaces.Messages;
+using Suitability.Consumer.Infrastructure.Extensions;
 
-namespace Suitability.Consumer.Infrastructure.Extensions
+namespace Suitability.Consumer.Application.Services.BackgroundJobs
 {
     public class BackgroundJobs : BackgroundService
     {
@@ -38,6 +36,20 @@ namespace Suitability.Consumer.Infrastructure.Extensions
             {
 
             }
+        }
+
+        private async Task<IEnumerable<Message>> GetMessages(AwsConfiguration configs)
+        {
+            try
+            {
+                await using var scoped = _service.CreateAsyncScope();
+                var scopedService = scoped.ServiceProvider.GetRequiredService<ISqsConsumerService>;
+            }
+            catch (Exception ex) 
+            {
+                _logger.LogError(ex.Message);
+            }
+            return new List<Message>();
         }
     }
 }

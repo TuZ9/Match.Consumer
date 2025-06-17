@@ -7,14 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Messages\RabbitMq\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AWSSDK.SQS" Version="3.7.300.80" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Suitability.Consumer.Domain\Suitability.Consumer.Domain.csproj" />
     <ProjectReference Include="..\Suitability.Consumer.Infrastructure\Suitability.Consumer.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,7 +1,7 @@
 ﻿using Suitability.Consumer.Infrastructure.Extensions;
 using Amazon.SQS.Model;
 
-namespace Suitability.Consumer.Application.Interfaces.Messages.Aws
+namespace Suitability.Consumer.Application.Interfaces.Messages
 {
     public interface ISqsConsumerService
     {

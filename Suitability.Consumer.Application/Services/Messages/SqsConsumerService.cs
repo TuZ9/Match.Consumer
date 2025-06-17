@@ -2,10 +2,10 @@
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Logging;
-using Suitability.Consumer.Application.Interfaces.Messages.Aws;
+using Suitability.Consumer.Application.Interfaces.Messages;
 using Suitability.Consumer.Infrastructure.Extensions;
 
-namespace Suitability.Consumer.Application.Services.Messages.Aws
+namespace Suitability.Consumer.Application.Services.Messages
 {
     public class SqsConsumerService : ISqsConsumerService
     {
