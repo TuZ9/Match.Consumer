@@ -1,4 +1,4 @@
-﻿namespace Suitability.Consumer.Infrastructure.Extensions
+﻿namespace Suitability.Consumer.Domain.Helper
 {
     public class AwsConfiguration
     {

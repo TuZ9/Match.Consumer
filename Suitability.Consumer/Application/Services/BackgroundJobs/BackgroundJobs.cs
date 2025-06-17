@@ -2,8 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Amazon.SQS.Model;
-using Suitability.Consumer.Application.Interfaces.Messages;
-using Suitability.Consumer.Infrastructure.Extensions;
+using Suitability.Consumer.Domain.Interfaces.Messages;
 
 namespace Suitability.Consumer.Application.Services.BackgroundJobs
 {
@@ -38,7 +37,7 @@ namespace Suitability.Consumer.Application.Services.BackgroundJobs
             }
         }
 
-        private async Task<IEnumerable<Message>> GetMessages(AwsConfiguration configs)
+        private async Task<IEnumerable<Message>> GetMessages(Domain.Helper.AwsConfiguration configs)
         {
             try
             {

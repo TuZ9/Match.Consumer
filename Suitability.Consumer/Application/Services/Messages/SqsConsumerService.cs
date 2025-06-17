@@ -2,12 +2,10 @@
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Microsoft.Extensions.Logging;
-using Suitability.Consumer.Application.Interfaces.Messages;
-using Suitability.Consumer.Infrastructure.Extensions;
 
 namespace Suitability.Consumer.Application.Services.Messages
 {
-    public class SqsConsumerService : ISqsConsumerService
+    public class SqsConsumerService : Domain.Interfaces.Messages.ISqsConsumerService
     {
         private readonly ILogger<SqsConsumerService> _logger;
         private AmazonSQSClient _amazonSQSClient;
@@ -30,7 +28,7 @@ namespace Suitability.Consumer.Application.Services.Messages
             }
         }
 
-        public async Task<IEnumerable<Message>> GetSqsMessageAsync(AwsConfiguration configs)
+        public async Task<IEnumerable<Message>> GetSqsMessageAsync(Domain.Helper.AwsConfiguration configs)
         {
             var list = new List<Message>();
             var _sqsClient = SqsClientConfiguration(configs);
@@ -67,7 +65,7 @@ namespace Suitability.Consumer.Application.Services.Messages
             }            
         }
 
-        public async Task PullSqsDlMessage(AwsConfiguration configs, string messageBody)
+        public async Task PullSqsDlMessage(Domain.Helper.AwsConfiguration configs, string messageBody)
         {
             var _sqsClient = SqsClientConfiguration(configs);
 
@@ -90,7 +88,7 @@ namespace Suitability.Consumer.Application.Services.Messages
             }
         }
 
-        public void PurgeQueue(AwsConfiguration configs)
+        public void PurgeQueue(Domain.Helper.AwsConfiguration configs)
         {
             try
             {
@@ -103,7 +101,7 @@ namespace Suitability.Consumer.Application.Services.Messages
             }
         }
 
-        private AmazonSQSClient SqsClientConfiguration(AwsConfiguration awsConfiguration)
+        private AmazonSQSClient SqsClientConfiguration(Domain.Helper.AwsConfiguration awsConfiguration)
         {
             var region = RegionEndpoint.GetBySystemName(awsConfiguration.AWSRegion);
             if (_amazonSQSClient != null) return _amazonSQSClient;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-using Suitability.Consumer.Application.Interfaces.ApiClientService;
 using Suitability.Consumer.Domain.Entities;
+using Suitability.Consumer.Domain.Interfaces.ApiClientService;
 
 namespace Suitability.Consumer.Infrastructure.HttpClientBase
 {

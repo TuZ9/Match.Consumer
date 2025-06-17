@@ -1,8 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Suitability.Consumer.Application.Interfaces.ApiClientService;
+﻿using Suitability.Consumer.Domain.Interfaces.ApiClientService;
 using Suitability.Consumer.Infrastructure.HttpClientBase;
 using Suitability.Consumer.Infrastructure.Static;
+
 
 namespace Suitability.Consumer.Infrastructure.Extensions
 {
@@ -31,3 +30,4 @@ namespace Suitability.Consumer.Infrastructure.Extensions
         }
     }
 }
+

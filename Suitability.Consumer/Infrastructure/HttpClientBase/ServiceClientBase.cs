@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Suitability.Consumer.Application.Interfaces.ApiClientService;
+using Suitability.Consumer.Domain.Interfaces.ApiClientService;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;

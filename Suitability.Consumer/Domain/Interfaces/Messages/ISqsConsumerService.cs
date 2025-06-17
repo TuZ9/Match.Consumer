@@ -1,4 +1,4 @@
-﻿using Suitability.Consumer.Infrastructure.Extensions;
+﻿using Suitability.Consumer.Domain.Helper;
 using Amazon.SQS.Model;
 
 namespace Suitability.Consumer.Domain.Interfaces.Messages
