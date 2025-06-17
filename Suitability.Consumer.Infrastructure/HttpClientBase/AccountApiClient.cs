@@ -2,7 +2,7 @@
 using Suitability.Consumer.Application.Interfaces.ApiClientService;
 using Suitability.Consumer.Domain.Entities;
 
-namespace Suitability.Consumer.Application.Services.HttpClientBase
+namespace Suitability.Consumer.Infrastructure.HttpClientBase
 {
     public class AccountApiClient : ServiceClientBase<Account, AccountApiClient>, IAccountApiClient
     {

@@ -1,6 +1,6 @@
 ﻿using Suitability.Consumer.Domain.Dto;
 
-namespace Suitability.Consumer.Application.Interfaces.ApiClientService
+namespace Suitability.Consumer.Domain.Interfaces.ApiClientService
 {
     public interface IProductApiClient : IServiceClientBase<ProductDto>
     {

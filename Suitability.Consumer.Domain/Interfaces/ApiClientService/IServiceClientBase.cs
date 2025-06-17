@@ -1,4 +1,4 @@
-﻿namespace Suitability.Consumer.Application.Interfaces.ApiClientService
+﻿namespace Suitability.Consumer.Domain.Interfaces.ApiClientService
 {
     public interface IServiceClientBase<TEntity> where TEntity : class
     {

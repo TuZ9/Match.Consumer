@@ -2,7 +2,7 @@
 using Suitability.Consumer.Application.Interfaces.ApiClientService;
 using Suitability.Consumer.Domain.Dto;
 
-namespace Suitability.Consumer.Application.Services.HttpClientBase
+namespace Suitability.Consumer.Infrastructure.HttpClientBase
 {
     public class ProductComplementApiClient : ServiceClientBase<ProductComplementDto, ProductComplementApiClient>, IProductComplementApiClient
     {

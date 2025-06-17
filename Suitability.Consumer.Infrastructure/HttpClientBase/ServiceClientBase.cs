@@ -4,7 +4,7 @@ using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
 
-namespace Suitability.Consumer.Application.Services.HttpClientBase
+namespace Suitability.Consumer.Infrastructure.HttpClientBase
 {
     public abstract class ServiceClientBase<TEntity, TYEntity> : IServiceClientBase<TEntity> where TEntity : class where TYEntity : class
     {

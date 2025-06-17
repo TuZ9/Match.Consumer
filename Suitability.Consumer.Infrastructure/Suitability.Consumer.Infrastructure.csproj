@@ -26,4 +26,9 @@
     <PackageReference Include="MongoDB.Driver" Version="2.26.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Suitability.Consumer.Domain\Suitability.Consumer.Domain.csproj" />
+    <ProjectReference Include="..\Suitability.Consumer.Application\Suitability.Consumer.Application.csproj" />
+  </ItemGroup>
+
 </Project>
