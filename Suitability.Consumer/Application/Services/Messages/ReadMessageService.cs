@@ -10,12 +10,13 @@ namespace Suitability.Consumer.Application.Services.Messages
     {
         private readonly IAmazonBucketService _amazonBucketService;
         private readonly ILogger<ReadMessageService> _logger;
-        //private readonly 
+        private readonly IGatewayService _gatewayService;
         private readonly SemaphoreSlim _semaphore = new(1, 1);
         private MessageLess? _lessPayload;
-        public ReadMessageService(ILogger<ReadMessageService> logger, IAmazonBucketService amazonBucketService)
+        public ReadMessageService(ILogger<ReadMessageService> logger, IAmazonBucketService amazonBucketService, IGatewayService gatewayService)
         {
             _logger = logger;
+            _gatewayService = gatewayService;
             _amazonBucketService = amazonBucketService;
             _lessPayload = new MessageLess();
 
@@ -36,7 +37,7 @@ namespace Suitability.Consumer.Application.Services.Messages
 
                 if (DateTime.Parse(positionDate) >= DateTime.Parse(lastDay))
                 {
-                    //await _
+                    await _gatewayService.ConsumeProducts();
                 }
                 else
                 {
@@ -73,7 +74,7 @@ namespace Suitability.Consumer.Application.Services.Messages
 
                     if (DateTime.Parse(positionDate) >= DateTime.Parse(lastDay))
                     {
-                        //await _
+                        await _gatewayService.ConsumeProducts();
                     }
                     else
                     {

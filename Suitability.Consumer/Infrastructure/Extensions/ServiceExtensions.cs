@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Suitability.Consumer.Application.Services;
+using Suitability.Consumer.Application.Services.Messages;
+using Suitability.Consumer.Domain.Interfaces.Messages;
 using Suitability.Consumer.Domain.Interfaces.Services;
 
 namespace Suitability.Consumer.Infrastructure.Extensions
@@ -14,7 +16,10 @@ namespace Suitability.Consumer.Infrastructure.Extensions
         private static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             return services
-                .AddScoped<IConsumerService, Application.Services.ConsumerService>();
+                .AddScoped<IConsumerService, ConsumerService>()
+                .AddScoped<IGatewayService, GatewayService>()
+                .AddScoped<ISqsConsumerService, SqsConsumerService>()
+                .AddScoped<IReadMessageService, ReadMessageService>();
         }
     }
 }
