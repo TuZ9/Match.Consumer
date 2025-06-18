@@ -7,6 +7,8 @@ namespace Suitability.Consumer.Infrastructure.Static
     {
         public static string? Auroraconnection;
         public static string? Mongoconnection = "";
+        public static string? AwsRegion = "us-east-01";
+        public static string? S3Bucket = "bucket";
         public static string SuitabilityProductEndpoint = "https://api.steampowered.com";
         public static string SuitabilityProductComplementEndpoint = "https://store.steampowered.com/api/appdetails?appids=730";
         public static string SteamKey = "7EF68DF4509300363D18904036C9C169";
